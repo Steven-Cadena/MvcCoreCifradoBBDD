@@ -1,0 +1,32 @@
+﻿@model Usuario
+<h1>Log In</h1>
+
+<form method="post">
+    <label>Email: </label>
+    <input type="text" name="email" class="form-control" />
+    <br />
+    <label>Password: </label>
+    <input type="text" name="password" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-success">
+        Log In
+    </button>
+</form>
+<h2 style="color:red">
+    @ViewData["MENSAJE"]
+</h2>
+
+@if (Model != null) 
+{
+<ul class="list-group">
+    <li class="list-group-item">
+        Nombre Usuario: @Model.Nombre
+    </li>
+    <li class="list-group-item">
+        Email Usuario: @Model.Email
+    </li>
+    <li class="list-group-item">
+        <img src="~/images/@Model.Imagen" style="width:150px;height:150px;"/>
+    </li>
+</ul>
+}
